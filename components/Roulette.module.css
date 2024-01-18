@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.optionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.optionContainer > p {
+  color: grey;
+}
+
+.controller {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.controller > button {
+  width: auto;
+  border: solid 0.4px grey;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: gainsboro;
+}
+
+.controller > p {
+  font-size: 20px;
+}
+
+.roulette::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 15px solid white; /* 위 방향의 삼각형 높이 및 색상 설정 */
+  border-left: 15px solid transparent; /* 왼쪽 삼각형 변의 두께 및 색상 설정 */
+  border-right: 15px solid transparent; /* 오른쪽 삼각형 변의 두께 및 색상 설정 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 22;
+}
+
+.start,
+.new,
+.optionInput > button {
+  border: none;
+  width: auto;
+  padding: 10px 13px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #e6471d;
+}
+
+.new {
+  background-color: grey;
+}
+
+.winningBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.winningLabel {
+  font-size: 20px;
+}
+
+.behindBtn {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.behindBtn > button {
+  width: 8rem;
+}
+
+.optionInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.inputDiv > input {
+  height: 3rem;
+  width: 20rem;
+  border: solid 0.4px grey;
+  padding: 10px 13px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.optionInput > button {
+  color: black;
+  background-color: #f4cf4a;
+  width: auto;
+}
