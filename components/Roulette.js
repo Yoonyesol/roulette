@@ -7,6 +7,7 @@ const Roulette = () => {
   const [product, setProduct] = useState([]);
   const [inputValues, setInputValues] = useState([""]);
   const [isSpinning, setIsSpinning] = useState(false);
+  const [verifiedInput, setVerifiedInput] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
   const [winning, setWinning] = useState("");
 
@@ -72,19 +73,15 @@ const Roulette = () => {
   }, [product, colors, option]);
 
   const rotate = () => {
-    if ((option === 1 && inputValues[0] === "") || inputValues.includes("")) {
-      alert("옵션을 모두 입력해 주세요!");
-      return;
-    }
-
-    if (product.length === 0) {
-      alert("완료 버튼을 눌러 주세요!");
+    if (!verifiedInput) {
+      alert("옵션을 모두 입력한 뒤 완료 버튼을 눌러주세요!");
       return;
     }
 
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // setIsClickComplete(true);
     setIsSpinning(true);
 
     canvas.style.transform = `initial`;
@@ -113,17 +110,23 @@ const Roulette = () => {
     setInputValues(Array(option).fill(""));
     setWinning("");
     setShowButtons(false);
+    setVerifiedInput(false);
+  };
+
+  const resettingRoulette = () => {
+    setShowButtons(false);
+    setVerifiedInput(false);
   };
 
   const increaseOption = () => {
-    if (option !== 10) {
+    if (option !== 10 && !verifiedInput) {
       setOption(option + 1);
       setInputValues((prevValues) => [...prevValues, ""]);
     }
   };
 
   const decreaseOption = () => {
-    if (option !== 2) {
+    if (option !== 2 && !verifiedInput) {
       setOption(option - 1);
       setInputValues((prevValues) => prevValues.slice(0, -1));
     }
@@ -138,7 +141,13 @@ const Roulette = () => {
   };
 
   const handleComplete = () => {
+    if (inputValues.includes("") || inputValues.length !== option) {
+      alert("옵션을 모두 입력해 주세요!");
+      return;
+    }
+
     setProduct([...inputValues]);
+    setVerifiedInput(true);
   };
 
   return (
@@ -176,6 +185,13 @@ const Roulette = () => {
               다시 돌리기
             </button>
             <button
+              className={style.reset}
+              onClick={resettingRoulette}
+              disabled={isSpinning}
+            >
+              재설정
+            </button>
+            <button
               className={style.new}
               onClick={resetRoulette}
               disabled={isSpinning}
@@ -185,18 +201,18 @@ const Roulette = () => {
           </div>
         </div>
       )}
-      {!showButtons && (
+      {verifiedInput === false && (
         <p style={{ color: "grey", marginTop: "1.5rem" }}>
           옵션을 모두 입력한 뒤 완료 버튼을 눌러주세요.
         </p>
       )}
-      {!showButtons && (
+      {verifiedInput === false && (
         <div className={style.optionInput}>
           {Array.from({ length: option }).map((_, index) => (
             <div key={index} className={style.inputDiv}>
               <input
                 placeholder={`옵션 ${index + 1} 입력`}
-                value={inputValues[index]}
+                value={inputValues[index] || ""}
                 onChange={(e) => handleInputChange(index, e.target.value)}
               />
             </div>

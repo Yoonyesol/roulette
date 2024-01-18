@@ -53,6 +53,7 @@
 
 .start,
 .new,
+.reset,
 .optionInput > button {
   border: none;
   width: auto;
@@ -63,8 +64,12 @@
   background-color: #e6471d;
 }
 
-.new {
+.reset {
   background-color: grey;
+}
+
+.new {
+  background-color: rgb(82, 82, 252);
 }
 
 .winningBtn {
