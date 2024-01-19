@@ -2,7 +2,7 @@
   "name": "roulette",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Yoonyesol.github.io/roulette",
+  "homepage": "https://yoonyesol.github.io/roulette",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

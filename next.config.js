@@ -4,7 +4,7 @@ const nextConfig = {
   output: "export",
   assetPrefix:
     process.env.NODE_ENV === "production"
-      ? "http://Yoonyesol.github.io/roulette"
+      ? "https://yoonyesol.github.io/roulette"
       : "",
 };
 
