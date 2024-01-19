@@ -2,14 +2,13 @@
   "name": "roulette",
   "version": "0.1.0",
   "private": true,
-  "build": "next build && next export",
-  "predeploy": "npm run build",
-  "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "next": "14.0.4",
