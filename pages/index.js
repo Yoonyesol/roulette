@@ -24,8 +24,9 @@ const Home = () => {
           content={process.env.NAVER_SEARCH_VERIFY_KEY}
         />
       </Head>
-      <AdSense adSlot={process.env.AD_SLOT} />
+      <AdSense adSlot={"5002627191"} />
       <Roulette />
+      <AdSense adSlot={"4074324764"} />
     </div>
   );
 };
