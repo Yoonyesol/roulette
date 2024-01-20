@@ -81,7 +81,6 @@ const Roulette = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // setIsClickComplete(true);
     setIsSpinning(true);
 
     canvas.style.transform = `initial`;
@@ -164,38 +163,26 @@ const Roulette = () => {
         </div>
       </div>
       <div className={style.roulette}>
-        <canvas ref={canvasRef} width="350" height="350"></canvas>
+        <canvas ref={canvasRef} width="280" height="280"></canvas>
       </div>
-      {!showButtons && (
+      {!showButtons && !isSpinning && (
         <button className={style.start} onClick={rotate}>
           룰렛 돌리기
         </button>
       )}
-      {showButtons && (
+      {showButtons && !isSpinning && (
         <div className={style.winningBtn}>
           <div className={style.winningLabel}>
             <b>{`"${winning}"`}</b> 당첨
           </div>
           <div className={style.behindBtn}>
-            <button
-              className={style.start}
-              onClick={rotate}
-              disabled={isSpinning}
-            >
+            <button className={style.start} onClick={rotate}>
               다시 돌리기
             </button>
-            <button
-              className={style.reset}
-              onClick={resettingRoulette}
-              disabled={isSpinning}
-            >
+            <button className={style.reset} onClick={resettingRoulette}>
               재설정
             </button>
-            <button
-              className={style.new}
-              onClick={resetRoulette}
-              disabled={isSpinning}
-            >
+            <button className={style.new} onClick={resetRoulette}>
               새 원판
             </button>
           </div>
