@@ -1,5 +1,6 @@
 import Roulette from "../components/Roulette";
 import Head from "next/head";
+import Script from "next/script";
 
 const Home = () => {
   return (
@@ -18,7 +19,16 @@ const Home = () => {
         <meta name="author" content="룰렛 게임사" />
         <meta name="email" content="seaofiandme@google.com" />
         <meta property="og:type" content="website" />
+        <meta
+          name="naver-site-verification"
+          content={process.env.NAVER_SEARCH_VERIFY_KEY}
+        />
       </Head>
+      <Script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.GOOGLE_ADS_KEY}`}
+        crossOrigin="anonymous"
+      ></Script>
       <Roulette />
     </div>
   );
