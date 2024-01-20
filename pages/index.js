@@ -1,6 +1,6 @@
+import AdSense from "@/components/AdSense";
 import Roulette from "../components/Roulette";
 import Head from "next/head";
-import Script from "next/script";
 
 const Home = () => {
   return (
@@ -24,11 +24,7 @@ const Home = () => {
           content={process.env.NAVER_SEARCH_VERIFY_KEY}
         />
       </Head>
-      <Script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.GOOGLE_ADS_KEY}`}
-        crossOrigin="anonymous"
-      ></Script>
+      <AdSense adSlot={process.env.AD_SLOT} />
       <Roulette />
     </div>
   );
