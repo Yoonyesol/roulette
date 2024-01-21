@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://roulette.timeqlife.com
+
+# Sitemaps
+Sitemap: https://roulette.timeqlife.com/sitemap.xml

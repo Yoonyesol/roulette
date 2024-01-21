@@ -4,7 +4,7 @@ const nextConfig = {
   output: "export",
   assetPrefix:
     process.env.NODE_ENV === "production"
-      ? "https://roulette.timeqlife.com"
+      ? process.env.NEXT_PUBLIC_SITE_URL
       : "",
 };
 
