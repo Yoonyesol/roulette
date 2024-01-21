@@ -151,6 +151,7 @@ const Roulette = () => {
 
   return (
     <div className={style.container}>
+      <h1>룰렛 돌리기</h1>
       <div className={style.optionContainer}>
         <h3>옵션 개수 선택</h3>
         <p>(2 ~ 10개 선택)</p>
