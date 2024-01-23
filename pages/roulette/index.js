@@ -7,6 +7,7 @@ const Roulette = () => {
   return (
     <div>
       <Head>
+        <title>심플 룰렛</title>
         <link rel="icon" type="image" href="/favicon.ico" />
         <meta property="og:title" content="심플 룰렛" />
         <meta
