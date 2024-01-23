@@ -7,3 +7,5 @@ Host: https://timeqlife.com
 
 # Sitemaps
 Sitemap: https://timeqlife.com/sitemap.xml
+
+#DaumWebMasterTool:b66990f734ae4315f2bc85a9e53af18e5a17d3bbb926ba10bff4c6fcbb27dc9e:RukPQ0VizsMPuTcEawMjeg==
