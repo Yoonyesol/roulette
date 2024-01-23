@@ -3,9 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://roulette.timeqlife.com
+Host: https://timeqlife.com
 
 # Sitemaps
-Sitemap: https://roulette.timeqlife.com/sitemap.xml
-
-#DaumWebMasterTool:23a5e64327a586dd2004cb8f5236f76bb9991b95cd5b6ecf5fc7633dbc38c02f:fMUfcvz3U6TvfT1IgK/6gw==
+Sitemap: https://timeqlife.com/sitemap.xml

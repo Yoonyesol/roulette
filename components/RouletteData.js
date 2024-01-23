@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import style from "./Roulette.module.css";
+import style from "./RouletteData.module.css";
 
-const Roulette = () => {
+const RouletteData = () => {
   const canvasRef = useRef(null);
   const [option, setOption] = useState(2);
   const [product, setProduct] = useState([]);
@@ -212,4 +212,4 @@ const Roulette = () => {
   );
 };
 
-export default Roulette;
+export default RouletteData;
