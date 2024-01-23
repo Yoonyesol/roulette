@@ -8,7 +8,6 @@ const Roulette = () => {
     <div>
       <Head>
         <link rel="icon" type="image" href="/favicon.ico" />
-        <meta property="og:type" content="website" />
         <meta property="og:title" content="심플 룰렛" />
         <meta
           name="description"
@@ -16,9 +15,6 @@ const Roulette = () => {
         />
         <meta property="og:url" content="https://timeqlife.com/roulette" />
         <meta property="og:image" content="/thumbnail.png" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="author" content="룰렛 게임사" />
-        <meta name="email" content="seaofiandme@google.com" />
       </Head>
       <AdSense adSlot={"8185832302"} />
       <RouletteData />
